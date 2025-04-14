@@ -1,4 +1,5 @@
 from tkinter import Tk, BOTH, Canvas
+from line import Line
 
 class Window:
     def __init__(self, width=800, height=600):
@@ -7,6 +8,12 @@ class Window:
         self.canvas = Canvas(self.__root, width=width, height=height)
         self.canvas.pack()
         self.__running = False
+
+    def draw_line(self, line):
+        if isinstance(line, Line):
+            line.draw(self.canvas)
+        else:
+            raise TypeError("Expected a Line object")
 
     def redraw(self):
         self.__root.update_idletasks()
