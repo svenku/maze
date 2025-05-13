@@ -12,6 +12,7 @@ def main():
     cell_size = 50
     maze = Maze(cell_size, window)
     maze.setup()
+    maze.make_entrance_and_exit()
 
     # Start the event loop to keep the window open
     window.wait_for_close()

@@ -29,7 +29,19 @@ class Maze:
     def animate(self):
         self.window.redraw()
         sleep(0.005)
-        
+
+    def make_entrance_and_exit(self):
+        self.entrance = self.cells[0][0]
+        self.exit = self.cells[-1][-1]
+
+        self.entrance.has_top_wall = False
+        self.exit.has_bottom_wall = False
+
+        self.entrance.draw()
+        self.exit.draw()
+        self.window.redraw()
+
+
 
     
         
